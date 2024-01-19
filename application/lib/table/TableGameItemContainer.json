@@ -1,0 +1,32 @@
+{
+  "GAME_ITEM": [
+    {
+      "tableNo": 1,
+      "itemType": "SHIELD",
+      "itemTypeTablerNo": 0,
+      "itemRunningtiem": 5.0,
+      "itemCooltiem": 45
+    },
+    {
+      "tableNo": 2,
+      "itemType": "MAGNET",
+      "itemTypeTablerNo": 0,
+      "itemRunningtiem": 35.0,
+      "itemCooltiem": 140
+    },
+    {
+      "tableNo": 3,
+      "itemType": "BOOSTER",
+      "itemTypeTablerNo": 0,
+      "itemRunningtiem": 15.0,
+      "itemCooltiem": 75
+    },
+    {
+      "tableNo": 4,
+      "itemType": "DOUBLE",
+      "itemTypeTablerNo": 0,
+      "itemRunningtiem": 35.0,
+      "itemCooltiem": 140
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "EVENT": [
+    {
+      "tableNo": 0,
+      "eventNameServer": "별 획득량 증가 150%",
+      "eventType": "INCREASESTAR",
+      "eventMultiply": 1.5
+    },
+    {
+      "tableNo": 1,
+      "eventNameServer": "별 획득량 증가 200%",
+      "eventType": "INCREASESTAR",
+      "eventMultiply": 2.0
+    },
+    {
+      "tableNo": 2,
+      "eventNameServer": "별 획득량 증가 250%",
+      "eventType": "INCREASESTAR",
+      "eventMultiply": 2.5
+    },
+    {
+      "tableNo": 3,
+      "eventNameServer": "별 획득량 증가 300%",
+      "eventType": "INCREASESTAR",
+      "eventMultiply": 3.0
+    },
+    {
+      "tableNo": 4,
+      "eventNameServer": "하트 회복시간 감소 25%",
+      "eventType": "DECREASEHEART",
+      "eventMultiply": 0.25
+    },
+    {
+      "tableNo": 5,
+      "eventNameServer": "하트 회복시간 감소 50%",
+      "eventType": "DECREASEHEART",
+      "eventMultiply": 0.5
+    },
+    {
+      "tableNo": 6,
+      "eventNameServer": "하트 회복시간 감소 75%",
+      "eventType": "DECREASEHEART",
+      "eventMultiply": 0.75
+    },
+    {
+      "tableNo": 7,
+      "eventNameServer": "아이템 쿨타임 감소 25%",
+      "eventType": "DECREASEITEMCOOLTIME",
+      "eventMultiply": 0.25
+    },
+    {
+      "tableNo": 8,
+      "eventNameServer": "아이템 쿨타임 감소 50%",
+      "eventType": "DECREASEITEMCOOLTIME",
+      "eventMultiply": 0.5
+    },
+    {
+      "tableNo": 9,
+      "eventNameServer": "아이템 쿨타임 감소 75%",
+      "eventType": "DECREASEITEMCOOLTIME",
+      "eventMultiply": 0.75
+    },
+    {
+      "tableNo": 10,
+      "eventNameServer": "별 상점 가격할인 25%",
+      "eventType": "DECREASESTARSHOP",
+      "eventMultiply": 0.25
+    },
+    {
+      "tableNo": 11,
+      "eventNameServer": "별 상점 가격할인 50%",
+      "eventType": "DECREASESTARSHOP",
+      "eventMultiply": 0.5
+    },
+    {
+      "tableNo": 12,
+      "eventNameServer": "별 상점 가격할인 75%",
+      "eventType": "DECREASESTARSHOP",
+      "eventMultiply": 0.75
+    }
+  ]
+}

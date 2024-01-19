@@ -1,0 +1,12 @@
+{
+  "GOODS": [
+    {
+      "tableNo": 1,
+      "goodsType": "STAR"
+    },
+    {
+      "tableNo": 2,
+      "goodsType": "COIN"
+    }
+  ]
+}

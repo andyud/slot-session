@@ -1,0 +1,54 @@
+{
+  "ITEM": [
+    {
+      "tableNo": 1,
+      "itemType": "USEITEM_HEART",
+      "itemTypeTableNo": 0
+    },
+    {
+      "tableNo": 5,
+      "itemType": "USEITEM_HEART",
+      "itemTypeTableNo": 4
+    },
+    {
+      "tableNo": 6,
+      "itemType": "USEITEM_HEART",
+      "itemTypeTableNo": 5
+    },
+    {
+      "tableNo": 7,
+      "itemType": "GAME_ITEM",
+      "itemTypeTableNo": 1
+    },
+    {
+      "tableNo": 8,
+      "itemType": "GAME_ITEM",
+      "itemTypeTableNo": 2
+    },
+    {
+      "tableNo": 9,
+      "itemType": "GAME_ITEM",
+      "itemTypeTableNo": 3
+    },
+    {
+      "tableNo": 10,
+      "itemType": "GAME_ITEM",
+      "itemTypeTableNo": 4
+    },
+    {
+      "tableNo": 11,
+      "itemType": "GOODS",
+      "itemTypeTableNo": 1
+    },
+    {
+      "tableNo": 12,
+      "itemType": "GOODS",
+      "itemTypeTableNo": 2
+    },
+    {
+      "tableNo": 13,
+      "itemType": "USEITEM_HEART",
+      "itemTypeTableNo": 0
+    }
+  ]
+}

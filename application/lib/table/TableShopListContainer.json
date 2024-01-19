@@ -1,0 +1,119 @@
+{
+  "SHOP_LIST": [
+    {
+      "tableNo": 1,
+      "itemTableLink": 1,
+      "productCount": 1
+    },
+    {
+      "tableNo": 2,
+      "itemTableLink": 1,
+      "productCount": 10
+    },
+    {
+      "tableNo": 3,
+      "itemTableLink": 1,
+      "productCount": 55
+    },
+    {
+      "tableNo": 4,
+      "itemTableLink": 1,
+      "productCount": 120
+    },
+    {
+      "tableNo": 5,
+      "itemTableLink": 5,
+      "productCount": 1
+    },
+    {
+      "tableNo": 6,
+      "itemTableLink": 6,
+      "productCount": 1
+    },
+    {
+      "tableNo": 7,
+      "itemTableLink": 7,
+      "productCount": 1
+    },
+    {
+      "tableNo": 8,
+      "itemTableLink": 8,
+      "productCount": 1
+    },
+    {
+      "tableNo": 9,
+      "itemTableLink": 9,
+      "productCount": 1
+    },
+    {
+      "tableNo": 10,
+      "itemTableLink": 10,
+      "productCount": 1
+    },
+    {
+      "tableNo": 11,
+      "itemTableLink": 11,
+      "productCount": 1
+    },
+    {
+      "tableNo": 12,
+      "itemTableLink": 12,
+      "productCount": 1
+    },
+    {
+      "tableNo": 13,
+      "itemTableLink": 7,
+      "productCount": 10
+    },
+    {
+      "tableNo": 14,
+      "itemTableLink": 8,
+      "productCount": 10
+    },
+    {
+      "tableNo": 15,
+      "itemTableLink": 9,
+      "productCount": 10
+    },
+    {
+      "tableNo": 16,
+      "itemTableLink": 10,
+      "productCount": 10
+    },
+    {
+      "tableNo": 17,
+      "itemTableLink": 11,
+      "productCount": 100
+    },
+    {
+      "tableNo": 18,
+      "itemTableLink": 11,
+      "productCount": 1000
+    },
+    {
+      "tableNo": 19,
+      "itemTableLink": 11,
+      "productCount": 2000
+    },
+    {
+      "tableNo": 20,
+      "itemTableLink": 7,
+      "productCount": 5
+    },
+    {
+      "tableNo": 21,
+      "itemTableLink": 8,
+      "productCount": 5
+    },
+    {
+      "tableNo": 22,
+      "itemTableLink": 9,
+      "productCount": 5
+    },
+    {
+      "tableNo": 23,
+      "itemTableLink": 10,
+      "productCount": 5
+    }
+  ]
+}

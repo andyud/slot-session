@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <title>구글 로그인</title>
+<!--    <link rel="stylesheet" type="text/css" href="http://fs.sports.naver.com/error/css/fantasy.css">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript"
+            src="//appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+<!--    <meta name="appleid-signin-client-id" content="com.pomerium.webapp">-->
+<!--    <meta name="appleid-signin-scope" content="name email">-->
+<!--    <meta name="appleid-signin-redirect-uri" content="https://apitest.pomerun.com:8230/api/loginRedirect">-->
+    <meta name="appleid-signin-use-popup" content="true">
+    <meta name="google-signin-client_id" content="276262868321-q90lhr7qmke3f9eueq3321pmnbvnaqsk.apps.googleusercontent.com">
+    <script src="//apis.google.com/js/platform.js" async defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <h1>구글  로그인</h1>
+    <div class="row">
+        <div class="col-12">
+            <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in"></div>
+        </div>
+            <div class="col-12">
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        </div>
+    </div>
+    <script>
+        function onSignIn(googleUser) {
+            // Useful data for your client-side scripts:
+
+            var profile = googleUser.getBasicProfile();
+            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+            console.log('Full Name: ' + profile.getName());
+            console.log('Given Name: ' + profile.getGivenName());
+            console.log('Family Name: ' + profile.getFamilyName());
+            console.log("Image URL: " + profile.getImageUrl());
+            console.log("Email: " + profile.getEmail());
+
+            // The ID token you need to pass to your backend:
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+        }
+    </script>
+
+
+    <input type="button" class="btn btn-primary" value="게스트 로그인"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "USEITEM_HEART": [
+    {
+      "tableNo": 0,
+      "heartCount": 1,
+      "heartIncrease": -1,
+      "heartTimedecrease": -1
+    },
+    {
+      "tableNo": 4,
+      "heartCount": -1,
+      "heartIncrease": 1,
+      "heartTimedecrease": -1
+    },
+    {
+      "tableNo": 5,
+      "heartCount": -1,
+      "heartIncrease": -1,
+      "heartTimedecrease": 60
+    }
+  ]
+}

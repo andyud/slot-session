@@ -1,0 +1,136 @@
+{
+
+  "serverType":"api",
+  "testMode":true,
+  "ssl" :false,
+  "clusterMode" : true,
+
+  "logger_s3": false,
+  "workerConnectionDC":true,
+  "appNumber": ["46715027086-0hq75imb7e8a7idjmarua278burcb72l.apps.googleusercontent.com", "1052120072170-893v9h8qlgsao12hvd8qq2g61crhpc49.apps.googleusercontent.com"],
+  "aliasDomain":"127.0.0.1",
+  "serverSSL" :false,
+  "portInfo":{
+    "mode" :"number",
+    "maxCount":1,
+    "portType" : 0,
+    "defaultPort" : 8888
+  },
+  "userPacketDebug":true,
+  "service" :  {
+    "transport" : true,
+    "transportType": "socket.io",
+
+    "type":"http",
+    "transportOptions": {},
+    "reidsConn" : false,
+    "redis":{"host":"127.0.0.1","port":6379},
+
+    "sslKey":"*.key",
+    "sslCert":"*.crt",
+    "sslPass":"choil123",
+
+    "debug" :false,
+    "origin":["hubbleapp.click","127.0.0.1","localhost"]
+  },
+
+  "logDir" :"./logs",
+  "useDB" : true,
+  "masterDB" : true,
+  "db" : [
+
+
+    {
+      "namespace":"gameredis",
+      "model_dir":"gameredis",
+      "driver":"Redis",
+      "hostname":"dev-slot2.gfw1tp.ng.0001.use1.cache.amazonaws.com",
+      "port":6379,
+      "database" :1,
+      "username" :"",
+      "password":"",
+      "procedure" :false,
+      "redisModel" : true
+
+    },
+
+    {
+      "namespace":"game",
+      "driver":"Mysql",
+      "hostname":"info-game-dev.cluster-c0piawmnddek.us-east-1.rds.amazonaws.com",
+      "username" :"tiagame",
+      "database" :"slot",
+      "password":"dptmdptmdosso!",
+      "port":"3306",
+      "procedure" :true,
+      "connLimit" :1
+
+
+    },
+    {
+      "namespace":"spinLogs",
+      "driver":"Mysql",
+      "hostname":"info-game-dev.cluster-c0piawmnddek.us-east-1.rds.amazonaws.com",
+      "username" :"tiagame",
+      "database" :"logs",
+      "password":"dptmdptmdosso!",
+      "port":"3306",
+      "procedure" :true,
+      "connLimit" :1,
+      "connectionLimit": 3
+
+
+    }
+  ],
+  "net": {
+    "remote": [{
+      "hostname":"dc",
+      "ip" :"11.0.26.118",
+      "port":4200
+    }]
+
+  },
+
+  "serviceMode" :"dev",
+  "loggerLevel" :"info",
+  "loggerScreenLevel" :"info",
+  "cryptopass" : "123456789012345678901234",
+  "ispacket" : true,
+  "sessionKey": "bital",
+  "domainUrl" : "777invegas.com",
+  "domainMode" : "https",
+  "apiUrl" : {
+    "asia": "asiadev.pomerun.com",
+    "europe": "devapi.pomerun.com",
+    "southAmerica": "devapi.pomerun.com",
+    "africa": "devapi.pomerun.com",
+    "america": "devapi.pomerun.com"
+  },
+  "region": "east",
+  "sessionUrl" : "https://sessiondev.pomerun.com",
+  "heartbeat" : {
+    "heartbeatTimeout" : 120,
+    "heartbeatInterval":50
+  },
+  "platform" : {
+    "url" : "https://dev-api-plat.pomerium.space/api/game/v1.0",
+    "signin" : "https://dev-api-plat.pomerium.space/api/game/v1.0/signIn",
+    "getAsset" : "https://dev-api-plat.pomerium.space/api/game/v1.0/pet/getAsset"
+  },
+  "cryptUse" : true,
+  "gameId" : 10001,
+  "nftUnWrap" : true,
+  "stageTotal" : 5,
+  "maxPP" : {
+    "1":	1120,
+    "2":	1680,
+    "3":	2240,
+    "4":	2800,
+    "5":	3360
+  },
+  "sessionTime" : "2h",
+  "rsatype" : "pem"
+
+
+
+}

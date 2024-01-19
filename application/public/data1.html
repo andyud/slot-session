@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <label for="privkey">Private Key</label><br/>
+    <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQC6cQq4oor9ZyYsH+nJLu6ct8/DOVjpDeEbqog6uz8rd/CuvP5Q
+3G5Fnow4VLR1Fn2fdLMKWo1UAY8ZkkAS5OOQ8HUVpoh2WmPZXhA3Ka4HH+YrT8m1
+hIwcL/367kJO6kd1CbUPjKAFfLQiWNbOqPOaByaQrqnTjREkO7y/cjjimwIDAQAB
+AoGAIO0RzaW3EiWDUkuYiBUnwrmbkYixMQdod/BX+rdS4qRd9x4dc75aIyVq8g/T
+htIgAWckr3FqgCl+Ui/H7Q5LOeJxy13CXMBht+h3ymgzqG3L1udscqJJkR3MUZKA
+eLhFEZIIbd2dQtt2BIDrOUko5aMILlsO+t9hz9IgkqOT3WECQQDc3jHI+4c7Jofs
+5JyOPt6nGgpjAnOK6j1PKdML9uUhw/Y4S3WZb+XVJzMtioeZNkXIdVpV5BaZaNEY
+V+IhWN+JAkEA2Bj+3CQUtQQRpehYHnaIH9/5v0XRmL+nxdtKuYHMPRVClkR9Gz3q
+SeGa1SFRoCtq5VZc5OLNqlduyawoYgckAwJAMxkMt4zJmnutkrbJKXeOF2bE5Gca
+yBatHHV2qBv0or0tZ5S9nkPvDkNFadHU0TNnLZtIzPo56EABr/oVDNX80QJAXUt9
+TIFvRy84h04mLRCzeD90TXXRJYco4azpN+mnyX9SPhnXgVlbuwXhmL5HxUS5Y8XD
+WTXp4O7ab8sZrCi1DQJBAL10ml1nN6gGN80T0Ps5gJGVc1J5IXEreHRXXBuiUZ4e
+lvoB8l07s3Oe+biFXHo2JkxAs7/G4LH4LlJ71MF/YnY=
+-----END RSA PRIVATE KEY-----</textarea><br/>
+    <label for="pubkey">Public Key</label><br/>
+    <textarea id="pubkey" rows="15" cols="65">-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6cQq4oor9ZyYsH+nJLu6ct8/D
+OVjpDeEbqog6uz8rd/CuvP5Q3G5Fnow4VLR1Fn2fdLMKWo1UAY8ZkkAS5OOQ8HUV
+poh2WmPZXhA3Ka4HH+YrT8m1hIwcL/367kJO6kd1CbUPjKAFfLQiWNbOqPOaByaQ
+rqnTjREkO7y/cjjimwIDAQAB
+-----END PUBLIC KEY-----</textarea><br/>
+    <label for="input">Text to encrypt:</label><br/>
+    <textarea id="input" name="input" type="text" rows=4 cols=70>This is a test!</textarea><br/>
+    <textarea id="input2" name="input" type="text" rows=4 cols=70>암호화 텍스트</textarea><br/>
+    <input id="testme" type="button" value="Test Me!!!"/><br/>
+</div>
+
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="./jsencrypt.min.js"></script>
+<script type="text/javascript">
+    // Call this code when the page is done loading.
+    $(document).ready(()=>{
+        $('#testme').click(function () {
+
+
+            // let publicKey1 =atob('LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JR0pBb0dCQU83a3Z5YjFaNEZwNkZoQ3NVV1RKOFBTaEY1WVFkOWRTYUZqaXJnWVAzbVBsSmpHV2ZMV0ZaTlcKVUJBVW5vN2hyOXpwV0RGZjVFcEpReE12S1NFR3B3clpnQlZsaGw2SzJyc2dyVW5FdytZTGE4cmZVY1RQRWJ5YQpjRmsvTUxBOElrUCs0SHhrZG9lT0puVDJLMWVhT3cyb25uSFlsM2gvTGxJRHl5dkFWcjcxQWdNQkFBRT0KLS0tLS1FTkQgUlNBIFBVQkxJQyBLRVktLS0tLQo=');
+            //  let text ='aaaaa';
+            //  var encrypt = new JSEncrypt();
+            //
+            //  encrypt.setPublicKey($('#pubkey').val());
+            //  var encrypted = encrypt.encrypt(text);
+
+
+
+            //
+            // /* [aes128Encode 이벤트 함수 정의] */
+            // function aes256Encode(secretKey, Iv, data) {
+            //     console.log("");
+            //     console.log("[aes256Encode] : [start]");
+            //     console.log("[secretKey] : " + secretKey);
+            //     console.log("[Iv] : " + Iv);
+            //     console.log("[data] : " + JSON.stringify(data));
+            //     console.log("");
+            //
+            //     // [aes 인코딩 수행 실시 : cbc 모드]
+            //     const cipher = CryptoJS.AES.encrypt(JSON.stringify(data), CryptoJS.enc.Utf8.parse(secretKey), {
+            //         iv: CryptoJS.enc.Utf8.parse(Iv), // [Enter IV (Optional) 지정 방식]
+            //         padding: CryptoJS.pad.Pkcs7,
+            //         mode: CryptoJS.mode.CBC // [cbc 모드 선택]
+            //
+            //     });
+
+            // [인코딩 된 데이터 확인 실시]
+
+            //  console.log( CryptoJS.enc.Base64.stringify(cipher))
+
+            // let base64encoded = CryptoJS.enc.Base64.stringify(cipher.toString());
+            // let aes256EncodeData = cipher.toString(CryptoJS.enc.Base64);
+
+            // console.log(cipher.toString(CryptoJS.enc.Base64));
+
+            //let  base64Text = CryptoJS.enc.Base64.stringify(cipher.ciphertext);
+            let aes256EncodeData;
+            // aes256EncodeData = CryptoJS.enc.Base64.parse(base64Text);
+            //  let aes256EncodeData1 = cipher.toString()
+            //  console.log("");
+            //  console.log("[aes256Encode] : [encode]");
+            // // console.log("[encode base] : " + base64Text);
+            //  console.log("[encode] : " + aes256EncodeData1);
+
+            //0ieejpCOoW2pnmoLsKoSjn5VBr0k1iJyLFFrFj8c/Mo=
+
+            //  console.log("[base64]",base64encoded);
+            // }
+
+            // aes256Encode
+
+
+            // let detext ='ja1GJb8lTgRuGbhEPO9R0kDVKGfkZkEX9/P6NbwVp0JtT+smW62ui0F5c1pKqaQRRtzK/hS3GiaHRAnwUJ4Rt5BcuozzuaDyfxaG8BAj5SA/Tm14jUeajiZo+xtowI45YDBaFSxT+N92xzL7+CGmQ3GagkQe8g2PbpM3OLUGxwc=';
+            //
+            // // Decrypt with the private key...
+            // let detext =$('#input').val()
+            // var decrypt = new JSEncrypt();
+            // decrypt.setPrivateKey($('#privkey').val());
+            // var uncrypted = decrypt.decrypt(detext);
+            // console.log('aaaa',uncrypted)
+            //
+            // console.log('#uncrypted',JSON.parse(uncrypted))
+            // let keyData =JSON.parse(uncrypted);
+            //
+            // aes256Encode(keyData.PASS,keyData.IV,$('#input2').val());
+
+            /**
+             * 새롭게 생성된  RSA
+             */
+            var crypt = new JSEncrypt({default_key_size: 1024});
+            var PublicPrivateKey = {
+                PublicKey: crypt.getPublicKey(),
+                PrivateKey:crypt.getPrivateKey()
+            };
+            // //
+            // //
+            // //
+            let publicKey = PublicPrivateKey.PublicKey,PrivateKey= PublicPrivateKey.PrivateKey;
+            console.log(publicKey)
+
+            console.log(PrivateKey)
+            //
+            //
+             console.log('publicKey',btoa(publicKey)); //base64 로 만들고..
+
+
+
+
+        })
+    })
+
+</script>
+</html>
+

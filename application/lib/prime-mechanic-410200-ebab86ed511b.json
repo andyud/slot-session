@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "prime-mechanic-410200",
+  "private_key_id": "ebab86ed511b18f77f0db82b774a4b1b797bea5f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCjS4XHZizBjOuI\nJcsN5uzIXmoTiLQ0TWiGppcK3rlG6aiixQzeWXlrh4sMMFdmyPlkfrEV6ype6VxF\nakp2L5O8OQWqjTH969lKipdKLpPbCSuKjoOeawvlL2xyD5/j3k91BSO5oDjYTqTH\n6qKz8OaP5OXi6gQgtO7ZIyAjAXeKAmlaAr9NryAY4lsu2mnR8b58M0KXIZj7Bq4i\nPg08CpFK83/MrM3i1pDMv9YP4SgYFCzqmBfDfVzZGNsjIy5fRBoBxqnnSAJjBTuQ\nV0CJCcTciMOcpo7nFW+j02dbHMguYPQHQPk5rWGG1GQufwOqBgOhmsW54VjW9iiC\nK7dY/HprAgMBAAECggEAI9mMwT4ZTVTW0MkbTy4HheXUe/1jMqhb7lPcjTJgksTx\nlOqV7KrQEV9sk3x5c8NjnUCDOECsyLGK5GJ1foTrdkM+jzb4ZrrEtay/kjWvmELn\nIEAxfTIbJnHG6TOs8qX348UBFtuqHzME0i8dEUwuEiE6pxqhVVzjoyAnCghkahPL\nqqT1MhMG5+gtBKDrNQE5lAmJqUZiDdkYSjVnIF/KnFnVRwEGb1WcvM+0zfhQQMaQ\nhR4x9cQXaEEyCatU0IPq83YwZRXY5fttDbaoClaIhUeyqWns9HSDNyDAl+blt5KZ\nj+SHWXikNaL598QHdXawOK3Gq/HH8xjyo7D8SWpVgQKBgQDQZAioFf+t4HYLEi49\nMAqpnuEGXmL528owSpDQcb/9HH69Ex0pVIi2vqreGkuauxpJef/O+0DiV8o1zRzo\nAlb9KZwOF3O8yOVmY8MiRayuUKacZOLYhyjfyX3BOtGmtVob12wEPt4/J+VZACif\nyzD0USKGS/wIwcfPGxS/5PBCWwKBgQDImgN87/EMQI2IdvQPNG9Tr4DSV1jcHGeV\nMuMW95Mw0zUtLk+QVkrKSIFC3zd/HBb5Xa+3PUZr6LUE8CfAfoFw+pe3J3ij5+ho\negRk2LRdAiotvugcCO1+NYEjloRAdYijnmS8FDeVINEETMNLbrNdwWGyxBM4OZq1\n++nqh1wFMQKBgQCmsd5a1n4X0J2cbYafW3asCHNobMgvpikuR/dfRh6Vkd2v0UJa\ndUyHIi38THx94X09mWGPaFyWsjMGpnShAn4jNM2oWAo00V7vcI3/NEzVg55DLFBp\ndHS1zq/RigN6n0bdTo0ROFj/nCJR91aHvDoEtYIwe0e4mYoDmV4XwkKOUQKBgHp+\naZDaJ9R2eraRBLlgKHbunXhT9CP8iFf4CemVZmETJ86eD+Gwf90D50LBcW8B5RmC\n1vDKzvzHzfnk+DE4TqyBqTEjPizASQ+7KoG2PnTpBH6Iq82qufMuktv7ZmjCHJzk\n9NhQdBxxPJEmmr6uK4Mduh3iU2Yq7skfuhgHbe6RAoGAUtQaOYWL3DEn4MFnBDSD\n1W53dmt6nE9LL3c3xQtCWJYGDj8fXFFuYn5zdMZCcH8OD2GVc5I1jr/YOw4PUV75\nw4nb4Nk01z9M7xby5P+MIlCtJa5lM8JE2S/X6mjRkKWWgvctlIpZfqhuvUxD4U4G\nmy5Yh/wi7wBNRQVX88LWMD0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "infogames@prime-mechanic-410200.iam.gserviceaccount.com",
+  "client_id": "106785295386011685980",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/infogames%40prime-mechanic-410200.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

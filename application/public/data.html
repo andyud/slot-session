@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <label for="privkey">Private Key</label><br/>
+    <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQC6cQq4oor9ZyYsH+nJLu6ct8/DOVjpDeEbqog6uz8rd/CuvP5Q
+3G5Fnow4VLR1Fn2fdLMKWo1UAY8ZkkAS5OOQ8HUVpoh2WmPZXhA3Ka4HH+YrT8m1
+hIwcL/367kJO6kd1CbUPjKAFfLQiWNbOqPOaByaQrqnTjREkO7y/cjjimwIDAQAB
+AoGAIO0RzaW3EiWDUkuYiBUnwrmbkYixMQdod/BX+rdS4qRd9x4dc75aIyVq8g/T
+htIgAWckr3FqgCl+Ui/H7Q5LOeJxy13CXMBht+h3ymgzqG3L1udscqJJkR3MUZKA
+eLhFEZIIbd2dQtt2BIDrOUko5aMILlsO+t9hz9IgkqOT3WECQQDc3jHI+4c7Jofs
+5JyOPt6nGgpjAnOK6j1PKdML9uUhw/Y4S3WZb+XVJzMtioeZNkXIdVpV5BaZaNEY
+V+IhWN+JAkEA2Bj+3CQUtQQRpehYHnaIH9/5v0XRmL+nxdtKuYHMPRVClkR9Gz3q
+SeGa1SFRoCtq5VZc5OLNqlduyawoYgckAwJAMxkMt4zJmnutkrbJKXeOF2bE5Gca
+yBatHHV2qBv0or0tZ5S9nkPvDkNFadHU0TNnLZtIzPo56EABr/oVDNX80QJAXUt9
+TIFvRy84h04mLRCzeD90TXXRJYco4azpN+mnyX9SPhnXgVlbuwXhmL5HxUS5Y8XD
+WTXp4O7ab8sZrCi1DQJBAL10ml1nN6gGN80T0Ps5gJGVc1J5IXEreHRXXBuiUZ4e
+lvoB8l07s3Oe+biFXHo2JkxAs7/G4LH4LlJ71MF/YnY=
+-----END RSA PRIVATE KEY-----</textarea><br/>
+    <label for="pubkey">Public Key</label><br/>
+    <textarea id="pubkey" rows="15" cols="65">-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6cQq4oor9ZyYsH+nJLu6ct8/D
+OVjpDeEbqog6uz8rd/CuvP5Q3G5Fnow4VLR1Fn2fdLMKWo1UAY8ZkkAS5OOQ8HUV
+poh2WmPZXhA3Ka4HH+YrT8m1hIwcL/367kJO6kd1CbUPjKAFfLQiWNbOqPOaByaQ
+rqnTjREkO7y/cjjimwIDAQAB
+-----END PUBLIC KEY-----</textarea><br/>
+    <label for="input">Text to encrypt:</label><br/>
+    <textarea id="input" name="input" type="text" rows=4 cols=70>서버에서 받은 암호화 키</textarea><br/>
+    <textarea id="input2" name="input" type="text" rows=4 cols=70>암호화 해야 하는 json </textarea><br/>
+
+    <textarea id="input3" name="input" type="text" rows=4 cols=70>복호화 하기.</textarea><br/>
+    <input id="testme" type="button" value="암호화하기"/>
+    <input id="detext" type="button" value="복호화하기"/><br/>
+
+</div>
+
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="./jsencrypt.min.js"></script>
+<script src="./js.cookie.js"></script>
+<script type="text/javascript">
+    // Call this code when the page is done loading.
+    $(document).ready(()=>{
+
+        $('#detext').on('click',function (e) {
+            var encrypt = new JSEncrypt();
+            encrypt.setPublicKey($('#pubkey').val());
+            encrypt.setPrivateKey($('#privkey').val());
+            console.log('##detext 복호화')
+            var PublicPrivateKey = {
+                PublicKey: encrypt.getPublicKey(),
+                PrivateKey:encrypt.getPrivateKey()
+            };
+            let publicKey = PublicPrivateKey.PublicKey,PrivateKey= PublicPrivateKey.PrivateKey;
+            console.log(publicKey)
+            console.log(PrivateKey)
+
+            let data = JSON.parse(encrypt.decrypt($('#input').val()));
+            console.log(data.PASS,data.IV);
+            let _iv =  CryptoJS.enc.Utf8.parse(data.IV);
+            let _pass = CryptoJS.enc.Utf8.parse(data.PASS);
+
+             let detext = $('#input3').val();
+
+
+            let cipherData = CryptoJS.AES.decrypt(detext, _pass, {
+                iv:_iv,
+
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7,
+                format: CryptoJS.format.OpenSSL
+
+            });
+
+            console.log(cipherData)
+
+            console.log('#uncrypted',cipherData.toString(CryptoJS.enc.Utf8))
+            let jsonData = cipherData.toString(CryptoJS.enc.Utf8);
+
+            let nData = JSON.parse(JSON.parse(jsonData));
+            console.log(nData)
+            //
+            // // Decrypt with the private key...
+            // let detext =$('#input').val()
+            // var decrypt = new JSEncrypt();
+            // decrypt.setPrivateKey($('#privkey').val());
+            // var uncrypted = encrypt.decrypt(detext);
+           //  console.log('aaaa',uncrypted)
+            //
+            // console.log('#uncrypted',JSON.parse(uncrypted))
+        });
+
+        $('#input').val(Cookies.get('_input'));
+        $('#testme').click(function () {
+
+
+            // let publicKey1 =atob('LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JR0pBb0dCQU83a3Z5YjFaNEZwNkZoQ3NVV1RKOFBTaEY1WVFkOWRTYUZqaXJnWVAzbVBsSmpHV2ZMV0ZaTlcKVUJBVW5vN2hyOXpwV0RGZjVFcEpReE12S1NFR3B3clpnQlZsaGw2SzJyc2dyVW5FdytZTGE4cmZVY1RQRWJ5YQpjRmsvTUxBOElrUCs0SHhrZG9lT0puVDJLMWVhT3cyb25uSFlsM2gvTGxJRHl5dkFWcjcxQWdNQkFBRT0KLS0tLS1FTkQgUlNBIFBVQkxJQyBLRVktLS0tLQo=');
+            //  let text ='aaaaa';
+           var encrypt = new JSEncrypt();
+            //
+           encrypt.setPublicKey($('#pubkey').val());
+            encrypt.setPrivateKey($('#privkey').val());
+            //  var encrypted = encrypt.encrypt(text);
+
+            var PublicPrivateKey = {
+                PublicKey: encrypt.getPublicKey(),
+                PrivateKey:encrypt.getPrivateKey()
+            };
+            /**
+             * 새롭게 생성된  RSA
+             */
+            // var crypt = new JSEncrypt({default_key_size: 1024});
+            // var PublicPrivateKey = {
+            //     PublicKey: crypt.getPublicKey(),
+            //     PrivateKey:crypt.getPrivateKey()
+            // };
+
+
+
+            //
+            // /* [aes128Encode 이벤트 함수 정의] */
+            function aes256Encode(secretKey, Iv, data) {
+                console.log("");
+                console.log("[aes256Encode] : [start]");
+                console.log("[secretKey] : " + secretKey);
+                console.log("[Iv] : " + Iv);
+                console.log("[data] : " + JSON.stringify(data));
+
+
+                let cipherText  = {'test':1};
+                let _iv =  CryptoJS.enc.Utf8.parse(Iv);
+                let _pass = CryptoJS.enc.Utf8.parse(secretKey);
+
+                let cipherData = CryptoJS.AES.encrypt(JSON.stringify(data), _pass, {
+                    iv:_iv,
+
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7,
+                    format: CryptoJS.format.OpenSSL
+
+                });
+
+                return CryptoJS.enc.Base64.stringify(cipherData.ciphertext);
+             //   return JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+            }
+            /**
+             *  서버에서 받은 encrypt  로 암호화 처리
+             */
+
+            // let detext ='ja1GJb8lTgRuGbhEPO9R0kDVKGfkZkEX9/P6NbwVp0JtT+smW62ui0F5c1pKqaQRRtzK/hS3GiaHRAnwUJ4Rt5BcuozzuaDyfxaG8BAj5SA/Tm14jUeajiZo+xtowI45YDBaFSxT+N92xzL7+CGmQ3GagkQe8g2PbpM3OLUGxwc=';
+            //
+            // // Decrypt with the private key...
+            // let detext =$('#input').val()
+            // var decrypt = new JSEncrypt();
+            // decrypt.setPrivateKey($('#privkey').val());
+            // var uncrypted = decrypt.decrypt(detext);
+            // console.log('aaaa',uncrypted)
+            //
+            // console.log('#uncrypted',JSON.parse(uncrypted))
+            // let keyData =JSON.parse(uncrypted);
+            //
+            // let decryptd  =  aes256Encode(keyData.PASS,keyData.IV,$('#input2').val());
+            // console.log('#decryptd',decryptd)
+
+
+            // //
+            // //
+            // //
+            let publicKey = PublicPrivateKey.PublicKey,PrivateKey= PublicPrivateKey.PrivateKey;
+            console.log(publicKey)
+
+            console.log(PrivateKey)
+            //
+            //
+             console.log('publicKey',btoa(publicKey)); //base64 로 만들고..
+
+            if ($('#input').val() !== '') {
+
+                Cookies.set('_input', $('#input').val());
+               // $('#input').val(Cookies.get(debugOptions.auth_id));
+                console.log('#encrypt',$('#input').val())
+                let text = $('#input2').val()
+                console.log($('#input').val())
+                var uncrypted = JSON.parse(encrypt.decrypt($('#input').val()));
+                console.log('uncrypted',uncrypted)
+               let encryptText =  aes256Encode(uncrypted.PASS,uncrypted.IV,text);
+                console.log('#암호화 텍스트',encryptText)
+                // let cipherData = CryptoJS.AES.decrypt(encryptText, uncrypted.PASS, {
+                //     iv:uncrypted.IV,
+                //
+                //     mode: CryptoJS.mode.CBC,
+                //     padding: CryptoJS.pad.Pkcs7,
+                //     format: CryptoJS.format.OpenSSL
+                //
+                // });
+                //
+                // console.log(cipherData)
+                // console.log('#uncrypted',cipherData.toString(CryptoJS.enc.Utf8))
+                // encrypt
+            }
+
+
+
+
+        })
+    })
+
+</script>
+</html>
+
